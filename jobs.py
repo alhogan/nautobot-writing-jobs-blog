@@ -48,7 +48,7 @@ class MyExampleJob(Job):
             status__name__in=["Decommissioning", "Planned"]
         ).count()
         self.logger.info(
-            f"The current interface capacity of {location.name} is: Total = {total_intf}, Used = {used_intf}({round(used_intf/total_intf)*100}%), Unused = {unused_intf}({round(unused_intf/total_intf)*100}%)"
+            f"The current interface capacity of {location.name} is: Total = {total_intf}, Used = {used_intf}({int(round(used_intf/total_intf, 2)*100)}%), Unused = {unused_intf}({int(round(unused_intf/total_intf, 2)*100)}%)"
         )
 
 
